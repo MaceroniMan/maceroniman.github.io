@@ -1,0 +1,263 @@
+:root {
+  --background: darkblue;
+  --text-color: grey;
+  --accent-color: yellow;
+  --header-text-color: black;
+  --hover-text-color: grey;
+  --outline-color: black;
+  --secondary-accent: black;
+}
+
+@media screen and (max-width: 1430px) {
+  .header {
+    display: none;
+  }
+  .mobile-btn {
+    visibility: show;
+  }
+}
+
+@media screen and (min-width: 1430px) {
+  .header {
+    display: block;
+  }
+  .mobile-btn {
+    visibility: hidden;
+  }
+}
+
+
+@font-face {
+  font-family: DOS;
+  src: url(/static/assets/ModernDOS9x16.ttf);
+}
+
+body {
+  background-color: var(--background, darkblue);
+  font-family: DOS;
+}
+
+.mobile-header {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.mobile-content {
+  background-color: var(--text-color, grey);
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  font-size: 25px;
+
+  padding: 17px 16px;
+  z-index: 1;
+
+  outline: 1px solid var(--outline-color, black);
+  outline-offset: -5px;
+}
+
+.mobile-btn {
+  margin: 0;
+  position: fixed;
+  bottom: 2%;
+  left: 50%;
+  -ms-transform: translate(-50%, -25%);
+  transform: translate(-50%, -25%);
+
+  padding: 17px 16px;
+  z-index: 1;
+
+  outline: 1px solid var(--outline-color, black);
+  outline-offset: -5px;
+
+  background-color: var(--text-color, grey);
+
+  cursor: pointer;
+}
+
+.mobile-btn a {
+  color: var(--header-text-color, black);
+}
+
+.mobile-header .element {
+  color: var(--header-text-color, black);
+  display: block;
+
+  padding: 5px;
+
+  cursor: pointer;
+}
+
+.mobile-header a::first-letter {
+  color: var(--accent-color, yellow);
+}
+
+.mobile-header a.active {
+  background: var(--header-text-color, black);
+  color: var(--hover-text-color, grey);
+}
+
+
+hr {
+  display: block;
+  border: 0;
+  margin: 1em 0;
+  padding: 0;
+
+  border-top: 1px solid var(--outline-color, black);
+}
+
+.header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100%;
+
+  margin: 0;
+
+  font-size: 20px;
+  
+  background-color: var(--text-color, grey);
+  font-weight: bold;
+}
+
+.header .element {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  color: var(--header-text-color, black);
+
+  text-decoration: none;
+}
+
+p.subheader {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+a {
+  color: var(--text-color, grey);
+  display: inline-block;
+}
+
+.header a::first-letter {
+  color: var(--accent-color, yellow);
+}
+
+p {
+  font-size: 25px;
+}
+
+.header a:hover {
+  background: var(--header-text-color, black);
+  cursor: pointer;
+  color: var(--hover-text-color, grey);
+}
+
+.header a.active {
+  background: var(--header-text-color, black);
+  color: var(--hover-text-color, grey);
+}
+
+.headtext {
+  font-size: 40px;
+  padding: 0px;
+  margin: 0px;
+  color: var(--text-color, grey);
+
+  text-align: center;
+}
+
+div.box {
+  border: 2px;
+  border-style: solid;
+  color: var(--text-color, grey);
+
+  padding: 10px;
+}
+
+span.yellow {
+  color: var(--accent-color, yellow);
+}
+
+ul {
+  list-style: none; /* Remove default bullets */
+  font-size: 25px;
+}
+
+ul li::before {
+  content: "> ";
+  color: var(--secondary-accent, black);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+
+  margin-top: 5px;
+  margin-left: -5px;
+
+  background-color: var(--text-color, grey);
+
+  max-width: 500px;
+  
+  padding: 17px 16px;
+  z-index: 1;
+
+  outline: 1px solid var(--outline-color, black);
+  outline-offset: -5px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover {
+  background-color: var(--header-text-color, black);
+}
+
+.dropdown:hover span {
+  color: var(--hover-text-color, grey);
+  cursor: pointer;
+}
+
+.dropdown span {
+  display: inline-block;
+}
+
+.dropdown span::first-letter {
+  color: var(--accent-color, yellow);
+}
+
+.header .dropdown {
+  margin-left: 20px;
+  padding: 5px;
+  color: var(--header-text-color, black);
+
+  text-decoration: none;
+}
+
+.dropdown-content a {
+  white-space: nowrap;
+} 

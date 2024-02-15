@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/static/style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" type="image/ico" href="/static/assets/favicon.ico"/>
+    <title>About Me</title>
+    <script src="/static/primary.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  </head>
+  
+  <body>
+    <div class="header">
+      <span class="element">Webview v1.4</span>
+      <a class="element" onclick="page('aboutme')" id="aboutmebtn">About Me</a>
+      <a class="element" onclick="page('projects')" id="projectsbtn">Projects</a>
+      <a class="element" onclick="page('aboutwebsite')" id="aboutwebsitebtn">This Website</a>
+      <span class="element"> | </span>
+      <div class="dropdown">
+        <span>Games ▼</span>
+        <div class="dropdown-content">
+          <a class="element" onclick="page('game$islandexplorer')" id="game$islandexplorerbtn">Island Explorer</a><br><br>
+          <a class="element" onclick="page('game$fightshow')" id="game$fightshowbtn">Fight Show</a><br><br>
+          <a class="element" onclick="page('game$hurricane')" id="game$hurricanebtn">Hurricane</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <span>General Projects ▼</span>
+        <div class="dropdown-content">
+          <a class="element" onclick="page('proj$watchbox')" id="proj$watchboxbtn">WatchBox</a><br><br>
+          <a class="element" onclick="page('proj$mirrior')" id="proj$mirriorbtn">Mirrior</a><br><br>
+          <a class="element" onclick="page('proj$mads')" id="proj$madsbtn">MaDS</a><br><br>
+          <a class="element" onclick="page('proj$libraries')" id="proj$librariesbtn">Misc Libraries</a><br><br>
+          <a class="element" onclick="page('proj$chat123')" id="proj$chat123btn">Chat123</a><br><br>
+          <a class="element" onclick="page('proj$obsidian')" id="proj$obsidianbtn">Obsidian Plugins</a>
+        </div>
+      </div>
+      <span class="element"> &nbsp; | </span>
+      <div class="dropdown">
+        <span>Theme ▼</span>
+        <div class="dropdown-content">
+          <a class="element" onclick="doTheme('main')" id="maintheme">Defualt</a><br><br>
+          <a class="element" onclick="doTheme('hacker')" id="hackertheme">Hacker</a><br><br>
+          <a class="element" onclick="doTheme('greyscale')" id="greyscaletheme">Greyscale</a>
+        </div>
+      </div>
+    </div> <br><br><br>
+
+    <div id="mobile-header" class="mobile-header">
+      <div class="mobile-content">
+        <span class="element">Webview v1.4</span>
+        <hr/>
+        
+        <a class="element" onclick="page('aboutme')" id="aboutmembl">About Me</a>
+        <a class="element" onclick="page('projects')" id="projectsmbl">Projects</a>
+        <a class="element" onclick="page('aboutwebsite')" id="aboutwebsitembl">This Website</a>
+        
+        <span class="element">Games ▼</span>
+        <a class="element" onclick="page('game$islandexplorer')" id="game$islandexplorermbl">&nbsp;Island Explorer</a>
+        <a class="element" onclick="page('game$fightshow')" id="game$fightshowmbl">&nbsp;Fight Show</a>
+        <a class="element" onclick="page('game$hurricane')" id="game$hurricanembl">&nbsp;Hurricane</a>
+        
+        <span class="element">Projects ▼</span>
+        <a class="element" onclick="page('proj$watchbox')" id="proj$watchboxmbl">&nbsp;WatchBox</a>
+        <a class="element" onclick="page('proj$mirrior')" id="proj$mirriormbl">&nbsp;Mirrior</a>
+        <a class="element" onclick="page('proj$mads')" id="proj$madsmbl">&nbsp;MaDS</a>
+        <a class="element" onclick="page('proj$libraries')" id="proj$librariesmbl">&nbsp;Misc Libraries</a>
+        <a class="element" onclick="page('proj$chat123')" id="proj$chat123mbl">&nbsp;Chat123</a>
+        <a class="element" onclick="page('proj$obsidian')" id="proj$obsidianmbl">&nbsp;Obsidian Plugins</a>
+      </div>
+    </div>
+
+    <div id="theme-mobile-header" class="mobile-header">
+      <div class="mobile-content">
+        <span class="element">Theme Picker v2.3</span>
+        <hr/>
+        <a class="element" onclick="doTheme('main')" id="mainthemembl">Defualt</a>
+        <a class="element" onclick="doTheme('hacker')" id="hackerthemembl">Hacker</a>
+        <a class="element" onclick="doTheme('greyscale')" id="greyscalethemembl">Greyscale</a>
+      </div>
+    </div>
+
+    <div id="mobile-btn" class="mobile-btn">
+      <a id="mobilebtn" onclick="mobile_header(true)">
+        <i style="font-size:45px" class="fa fa-bars"></i>
+      </a>
+      &nbsp;&nbsp;
+      <a id="theme-mobilebtn" onclick="theme_mobile_header(true)">
+        <i style="font-size:45px" class="fa fa-gear"></i>
+      </a>
+    </div>
+    
+    <div id="content">
+      
+    </div>
+    <p><br><br><br></p>
+    
+  </body>
+  <script>
+    link = links(window.location.hash, getUrlParam('l', undefined))
+    chat = chat123(getUrlParam('c', undefined))
+    if (link != false) {redirectaway(link)}
+    else if (chat != false) {window.location.href=chat}
+    else {
+      page(getUrlParam("page", "aboutme"))
+    }
+
+    doTheme(getCookie("theme", "main"))
+  </script>
+
+<script>
+window.onclick = function(event) {
+  if (event.target == document.getElementById("mobile-header")) {
+    mobile_header(false)
+  }
+  if (event.target == document.getElementById("theme-mobile-header")) {
+    theme_mobile_header(false)
+  }
+}
+</script>
+</html>
