@@ -1,10 +1,3 @@
-var shortcuts = {
-  "CDCWEB" : "https://cloudy-day-central.jackneils.repl.co",
-  "ISLEXP" : "https://replit.com/@JackNeils/IslandExplorer",
-  "CHATPR" : "https://chat123.jackneils.repl.co",
-  "MYACNT" : "https://myaccount.jackneils.repl.co"
-}
-
 var names = {
   "game$fightshow" : "Fight Show",
   "game$hurricane" : "Hurricane",
@@ -15,7 +8,6 @@ var names = {
   "proj$watchbox" : "WatchBox",
   "proj$mads" : "MaDS",
   "proj$obsidian" : "Obsidian Plugins",
-  "proj$chat123" : "Chat123",
 
   "aboutme" : "About Me",
   "aboutwebsite" : "About Website",
@@ -112,35 +104,11 @@ function getUrlParam(parameter, defaultvalue){
     return urlparameter;
 }
 
-function links(hash, urlvar) {
-  if (hash == "") {
-    var shortcut = urlvar
-  }
-  else {
-    var shortcut = hash.substring(1)
-  }
-
-  if (shortcuts.hasOwnProperty(shortcut)) {
-    return shortcuts[shortcut]
-  }
-  else {
-    return false
-  }
-}
-
 function page(screen) {
   if (screen in names) {
     load(names[screen], screen)
   }
 }
-
-function chat123(code) {
-  if (code == undefined) {return false}
-  else{
-    return 'http://chat123.jackneils.repl.co/s?l=' + code
-  }
-}
-
 
 function setCookie(cname,cvalue) {
   document.cookie = cname + "=" + cvalue + ";path=/";

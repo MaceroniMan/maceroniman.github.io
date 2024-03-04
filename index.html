@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="/static/style.css" rel="stylesheet" type="text/css" />
+    <link href="/static/style.css" rel="stylesheet" type="text/css"/>
     <link rel="shortcut icon" type="image/ico" href="/static/assets/favicon.ico"/>
     <title>About Me</title>
     <script src="/static/primary.js"></script>
@@ -33,7 +33,6 @@
           <a class="element" onclick="page('proj$mirrior')" id="proj$mirriorbtn">Mirrior</a><br><br>
           <a class="element" onclick="page('proj$mads')" id="proj$madsbtn">MaDS</a><br><br>
           <a class="element" onclick="page('proj$libraries')" id="proj$librariesbtn">Misc Libraries</a><br><br>
-          <a class="element" onclick="page('proj$chat123')" id="proj$chat123btn">Chat123</a><br><br>
           <a class="element" onclick="page('proj$obsidian')" id="proj$obsidianbtn">Obsidian Plugins</a>
         </div>
       </div>
@@ -67,7 +66,6 @@
         <a class="element" onclick="page('proj$mirrior')" id="proj$mirriormbl">&nbsp;Mirrior</a>
         <a class="element" onclick="page('proj$mads')" id="proj$madsmbl">&nbsp;MaDS</a>
         <a class="element" onclick="page('proj$libraries')" id="proj$librariesmbl">&nbsp;Misc Libraries</a>
-        <a class="element" onclick="page('proj$chat123')" id="proj$chat123mbl">&nbsp;Chat123</a>
         <a class="element" onclick="page('proj$obsidian')" id="proj$obsidianmbl">&nbsp;Obsidian Plugins</a>
       </div>
     </div>
@@ -99,14 +97,7 @@
     
   </body>
   <script>
-    link = links(window.location.hash, getUrlParam('l', undefined))
-    chat = chat123(getUrlParam('c', undefined))
-    if (link != false) {redirectaway(link)}
-    else if (chat != false) {window.location.href=chat}
-    else {
-      page(getUrlParam("page", "aboutme"))
-    }
-
+    page(getUrlParam("page", "aboutme"))
     doTheme(getCookie("theme", "main"))
   </script>
 
