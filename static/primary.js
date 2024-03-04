@@ -4,7 +4,6 @@ var names = {
   "game$islandexplorer" : "Island Explorer",
 
   "proj$mirrior" : "Mirrior",
-  "proj$libraries" : "Misc Modules",
   "proj$watchbox" : "WatchBox",
   "proj$mads" : "MaDS",
   "proj$obsidian" : "Obsidian Plugins",
